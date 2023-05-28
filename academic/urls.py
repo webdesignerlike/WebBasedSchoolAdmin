@@ -10,5 +10,5 @@ urlpatterns = [
     path('create-shift', views.create_shift, name='create-shift'),
     path('class-registration', views.class_registration, name='class-registration'),
     path('class-list', views.class_list, name='class-list'),
-    path('guide-teacher', views.create_guide_teacher, name='guide-teacher'),
+    # path('guide-teacher', views.create_guide_teacher, name='guide-teacher'),
 ]

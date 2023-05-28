@@ -1,13 +1,13 @@
 from django.db import models
-from address.models import District, Upazilla, Union
+from address.models import District
 from administration.models import Designation
 from academic.models import Department
 
 
 class EmployeeAddressInfo(models.Model):
     district = models.ForeignKey(District, on_delete=models.CASCADE, null=True)
-    upazilla = models.ForeignKey(Upazilla, on_delete=models.CASCADE, null=True)
-    union = models.ForeignKey(Union, on_delete=models.CASCADE, null=True)
+    # upazilla = models.ForeignKey(Upazilla, on_delete=models.CASCADE, null=True)
+    # union = models.ForeignKey(Union, on_delete=models.CASCADE, null=True)
     village = models.TextField()
 
     def __str__(self):
@@ -47,10 +47,10 @@ class EmployeeJobInfo(models.Model):
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
     scale = models.IntegerField()
     grade_of_post = models.CharField(max_length=45)
-    first_time_scale_due_year = models.IntegerField()
-    second_time_scale_due_year = models.IntegerField()
+    # first_time_scale_due_year = models.IntegerField()
+    # second_time_scale_due_year = models.IntegerField()
     promotion_due_year = models.IntegerField()
-    recreation_leave_due_year = models.IntegerField()
+    # recreation_leave_due_year = models.IntegerField()
     expected_retirement_year = models.IntegerField()
 
     def __str__(self):
@@ -88,9 +88,9 @@ class PersonalInfo(models.Model):
         ('ab-', 'AB-')
     )
     blood_group = models.CharField(choices=blood_group_choice, max_length=5)
-    e_tin = models.IntegerField(unique=True)
-    nid = models.IntegerField(unique=True)
-    driving_license_passport = models.IntegerField(unique=True)
+    # e_tin = models.IntegerField(unique=True)
+    # nid = models.IntegerField(unique=True)
+    # driving_license_passport = models.IntegerField(unique=True)
     phone_no = models.CharField(max_length=11, unique=True)
     email = models.CharField(max_length=255, unique=True)
     father_name = models.CharField(max_length=45)

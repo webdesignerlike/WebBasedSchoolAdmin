@@ -37,12 +37,12 @@ class Shift(models.Model):
     def __str__(self):
         return self.name
 
-class GuideTeacher(models.Model):
-    name = models.OneToOneField('teacher.PersonalInfo', on_delete=models.CASCADE, null=True)
-    date = models.DateField(auto_now_add=True)
+# class GuideTeacher(models.Model):
+#     name = models.OneToOneField('teacher.PersonalInfo', on_delete=models.CASCADE, null=True)
+#     date = models.DateField(auto_now_add=True)
 
-    def __str__(self):
-        return str(self.name)
+#     def __str__(self):
+#         return str(self.name)
 
 class ClassRegistration(models.Model):
     name = models.CharField(max_length=10, unique=True)
@@ -57,11 +57,11 @@ class ClassRegistration(models.Model):
     section = models.ForeignKey(Section, on_delete=models.CASCADE, null=True)
     session = models.ForeignKey(Session, on_delete=models.CASCADE, null=True)
     shift = models.ForeignKey(Shift, on_delete=models.CASCADE, null=True)
-    guide_teacher = models.OneToOneField(GuideTeacher, on_delete=models.CASCADE, null=True)
+    # guide_teacher = models.OneToOneField(GuideTeacher, on_delete=models.CASCADE, null=True)
     date = models.DateField(auto_now_add=True)
 
     class Meta:
-        unique_together = ['class_name', 'section', 'shift', 'guide_teacher']
+        unique_together = ['class_name', 'section', 'shift']
 
     def __str__(self):
         return self.name

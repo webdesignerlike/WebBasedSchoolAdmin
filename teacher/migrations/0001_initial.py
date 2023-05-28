@@ -82,7 +82,7 @@ class Migration(migrations.Migration):
                 ('photo', models.ImageField(upload_to='')),
                 ('date_of_birth', models.DateField()),
                 ('place_of_birth', models.CharField(max_length=45)),
-                ('nationality', models.CharField(choices=[('Bangladeshi', 'Bangladeshi'), ('Others', 'Others')], max_length=45)),
+                ('nationality', models.CharField(choices=[('Indian', 'Indian'), ('Others', 'Others')], max_length=45)),
                 ('religion', models.CharField(choices=[('Islam', 'Islam'), ('Hinduism', 'Hinduism'), ('Buddhism', 'Buddhism'), ('Christianity', 'Christianity'), ('Others', 'Others')], max_length=45)),
                 ('gender', models.CharField(choices=[('male', 'Male'), ('female', 'Female'), ('other', 'Other')], max_length=10)),
                 ('blood_group', models.CharField(choices=[('a+', 'A+'), ('o+', 'O+'), ('b+', 'B+'), ('ab+', 'AB+'), ('a-', 'A-'), ('o-', 'O-'), ('b-', 'B-'), ('ab-', 'AB-')], max_length=5)),

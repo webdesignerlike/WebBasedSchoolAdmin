@@ -55,7 +55,7 @@ class Migration(migrations.Migration):
                 ('email', models.EmailField(blank=True, max_length=254, null=True)),
                 ('birth_certificate_no', models.IntegerField()),
                 ('religion', models.CharField(choices=[('Islam', 'Islam'), ('Hinduism', 'Hinduism'), ('Buddhism', 'Buddhism'), ('Christianity', 'Christianity'), ('Others', 'Others')], max_length=45)),
-                ('nationality', models.CharField(choices=[('Bangladeshi', 'Bangladeshi'), ('Others', 'Others')], max_length=45)),
+                ('nationality', models.CharField(choices=[('Indian', 'Indian'), ('Others', 'Others')], max_length=45)),
             ],
         ),
         migrations.CreateModel(

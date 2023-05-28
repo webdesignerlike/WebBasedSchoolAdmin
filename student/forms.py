@@ -34,34 +34,34 @@ class StudentAddressInfoForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'district': forms.Select(attrs={'class': 'form-control'}),
-            'upazilla': forms.Select(attrs={'class': 'form-control'}),
-            'union': forms.Select(attrs={'class': 'form-control'}),
+            # 'upazilla': forms.Select(attrs={'class': 'form-control'}),
+            # 'union': forms.Select(attrs={'class': 'form-control'}),
             'village': forms.TextInput(attrs={'class': 'form-control'})
         }
 
-        def __init__(self, *args, **kwargs):
-            super().__init__(*args, **kwargs)
-            self.fields['upazilla'].queryset = Upazilla.objects.none()
+        # def __init__(self, *args, **kwargs):
+        #     super().__init__(*args, **kwargs)
+        #     self.fields['upazilla'].queryset = Upazilla.objects.none()
 
-            if 'upazilla' in self.data:
-                try:
-                    district_id = int(self.data.get('district'))
-                    self.fields['upazilla'].queryset = Upazilla.objects.filter(district_id=district_id).order_by('name')
-                except (ValueError, TypeError):
-                    pass
-            elif self.instance.pk:
-                self.fields['upazilla'].queryset = self.instance.district.upazilla_set.order_by('name')
+        #     if 'upazilla' in self.data:
+        #         try:
+        #             district_id = int(self.data.get('district'))
+        #             self.fields['upazilla'].queryset = Upazilla.objects.filter(district_id=district_id).order_by('name')
+        #         except (ValueError, TypeError):
+        #             pass
+        #     elif self.instance.pk:
+        #         self.fields['upazilla'].queryset = self.instance.district.upazilla_set.order_by('name')
 
-            self.fields['union'].queryset = Union.objects.none()
+        #     self.fields['union'].queryset = Union.objects.none()
 
-            if 'union' in self.data:
-                try:
-                    upazilla_id = int(self.data.get('upazilla'))
-                    self.fields['union'].queryset = Union.objects.filter(upazilla_id=upazilla_id).order_by('name')
-                except (ValueError, TypeError):
-                    pass
-            elif self.instance.pk:
-                self.fields['union'].queryset = self.instance.upazilla.union_set.order_by('name')
+        #     if 'union' in self.data:
+        #         try:
+        #             upazilla_id = int(self.data.get('upazilla'))
+        #             self.fields['union'].queryset = Union.objects.filter(upazilla_id=upazilla_id).order_by('name')
+        #         except (ValueError, TypeError):
+        #             pass
+        #     elif self.instance.pk:
+        #         self.fields['union'].queryset = self.instance.upazilla.union_set.order_by('name')
 
 
 class GuardianInfoForm(forms.ModelForm):

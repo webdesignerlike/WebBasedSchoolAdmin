@@ -55,13 +55,13 @@ class ClassRegistrationForm(forms.ModelForm):
             'section': forms.Select(attrs={'class': 'form-control'}),
             'session': forms.Select(attrs={'class': 'form-control'}),
             'shift': forms.Select(attrs={'class': 'form-control'}),
-            'guide_teacher': forms.Select(attrs={'class': 'form-control'}),
+            # 'guide_teacher': forms.Select(attrs={'class': 'form-control'}),
         }
 
-class GuideTeacherForm(forms.ModelForm):
-    class Meta:
-        model = models.GuideTeacher
-        fields = '__all__'
-        widgets = {
-            'name': forms.Select(attrs={'class': 'form-control'}),
-        }
+# class GuideTeacherForm(forms.ModelForm):
+#     class Meta:
+#         model = models.GuideTeacher
+#         fields = '__all__'
+#         widgets = {
+#             'name': forms.Select(attrs={'class': 'form-control'}),
+#         }

@@ -2,7 +2,7 @@ from django.db import models
 import random
 
 from academic.models import ClassInfo, ClassRegistration
-from address.models import District, Upazilla, Union
+from address.models import District
 
 class PersonalInfo(models.Model):
     name = models.CharField(max_length=100)
@@ -37,7 +37,7 @@ class PersonalInfo(models.Model):
     )
     religion = models.CharField(choices=religion_choice, max_length=45)
     nationality_choice = (
-        ('Bangladeshi', 'Bangladeshi'),
+        ('Indian', 'Indian'),
         ('Others', 'Others')
     )
     nationality = models.CharField(choices=nationality_choice, max_length=45)
@@ -47,8 +47,8 @@ class PersonalInfo(models.Model):
 
 class StudentAddressInfo(models.Model):
     district = models.ForeignKey(District, on_delete=models.CASCADE)
-    upazilla = models.ForeignKey(Upazilla, on_delete=models.CASCADE)
-    union = models.ForeignKey(Union, on_delete=models.CASCADE)
+    # upazilla = models.ForeignKey(Upazilla, on_delete=models.CASCADE)
+    # union = models.ForeignKey(Union, on_delete=models.CASCADE)
     village = models.TextField()
 
     def __str__(self):

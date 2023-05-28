@@ -3,17 +3,17 @@ from academic.models import ClassRegistration
 from .forms import *
 from .models import *
 
-def load_upazilla(request):
-    district_id = request.GET.get('district')
-    upazilla = Upazilla.objects.filter(district_id=district_id).order_by('name')
+# def load_upazilla(request):
+#     district_id = request.GET.get('district')
+#     upazilla = Upazilla.objects.filter(district_id=district_id).order_by('name')
 
-    upazilla_id = request.GET.get('upazilla')
-    union = Union.objects.filter(upazilla_id=upazilla_id).order_by('name')
-    context = {
-        'upazilla': upazilla,
-        'union': union
-    }
-    return render(request, 'others/upazilla_dropdown_list_options.html', context)
+#     upazilla_id = request.GET.get('upazilla')
+#     union = Union.objects.filter(upazilla_id=upazilla_id).order_by('name')
+#     context = {
+#         'upazilla': upazilla,
+#         'union': union
+#     }
+#     return render(request, 'others/upazilla_dropdown_list_options.html', context)
 
 
 def class_wise_student_registration(request):

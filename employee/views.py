@@ -1,21 +1,21 @@
 from django.shortcuts import render, redirect
 
 from . import forms
-from .models import District, Upazilla, Union, PersonalInfo
+from .models import District, PersonalInfo
 
 # Create your views here.
 
-def load_upazilla(request):
-    district_id = request.GET.get('district')
-    upazilla = Upazilla.objects.filter(district_id=district_id).order_by('name')
+# def load_upazilla(request):
+#     district_id = request.GET.get('district')
+#     upazilla = Upazilla.objects.filter(district_id=district_id).order_by('name')
 
-    upazilla_id = request.GET.get('upazilla')
-    union = Union.objects.filter(upazilla_id=upazilla_id).order_by('name')
-    context = {
-        'upazilla': upazilla,
-        'union': union
-    }
-    return render(request, 'others/upazilla_dropdown_list_options.html', context)
+#     upazilla_id = request.GET.get('upazilla')
+#     union = Union.objects.filter(upazilla_id=upazilla_id).order_by('name')
+#     context = {
+#         'upazilla': upazilla,
+#         'union': union
+#     }
+#     return render(request, 'others/upazilla_dropdown_list_options.html', context)
 
 
 def teacher_registration(request):
